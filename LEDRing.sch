@@ -3764,6 +3764,35 @@ Calculate current
 <wire x1="17.78" y1="-17.78" x2="17.78" y2="-12.7" width="0.1524" layer="91"/>
 <junction x="17.78" y="-12.7"/>
 </segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="VDD"/>
+<wire x1="-63.5" y1="-55.88" x2="-60.96" y2="-53.34" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D2" gate="G$1" pin="VDD"/>
+<wire x1="-30.48" y1="-55.88" x2="-27.94" y2="-53.34" width="0.1524" layer="91"/>
+<label x="-27.94" y="-53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="D3" gate="G$1" pin="VDD"/>
+<wire x1="2.54" y1="-55.88" x2="5.08" y2="-53.34" width="0.1524" layer="91"/>
+<label x="5.08" y="-53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="D4" gate="G$1" pin="VDD"/>
+<wire x1="35.56" y1="-55.88" x2="38.1" y2="-53.34" width="0.1524" layer="91"/>
+<label x="38.1" y="-53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="D5" gate="G$1" pin="VDD"/>
+<wire x1="68.58" y1="-55.88" x2="71.12" y2="-53.34" width="0.1524" layer="91"/>
+<label x="71.12" y="-53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="D6" gate="G$1" pin="VDD"/>
+<wire x1="104.14" y1="-55.88" x2="106.68" y2="-53.34" width="0.1524" layer="91"/>
+<label x="106.68" y="-53.34" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="V3_3" class="0">
 <segment>
@@ -3875,12 +3904,6 @@ Calculate current
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="124.46" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91"/>
 <label x="129.54" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="D1" gate="G$1" pin="VDD"/>
-<wire x1="-63.5" y1="-55.88" x2="-60.96" y2="-55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
