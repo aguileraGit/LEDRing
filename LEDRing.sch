@@ -3238,10 +3238,9 @@ IP68&lt;br&gt;
 <sheets>
 <sheet>
 <plain>
-<text x="-99.06" y="15.24" size="1.778" layer="91">Add USB part
-Connect LEDs
-Calculate current
-</text>
+<text x="-99.06" y="15.24" size="1.778" layer="91">Connect LEDs to GND
+Connect Stat pin
+Connect LED Data pin</text>
 </plain>
 <instances>
 <instance part="ISP1" gate="G$1" x="91.44" y="-20.32"/>
@@ -3522,6 +3521,11 @@ Calculate current
 <pinref part="C6" gate="G$1" pin="2"/>
 <pinref part="GND17" gate="1" pin="GND"/>
 <wire x1="53.34" y1="7.62" x2="53.34" y2="2.54" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D2" gate="G$1" pin="VSS"/>
+<wire x1="-53.34" y1="-63.5" x2="-55.88" y2="-66.04" width="0.1524" layer="91"/>
+<label x="-60.96" y="-68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$7" class="0">

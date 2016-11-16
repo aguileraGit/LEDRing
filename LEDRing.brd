@@ -1479,6 +1479,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="22.225" y1="11.938" x2="23.495" y2="11.938" width="0.3048" layer="16"/>
 <wire x1="23.495" y1="11.938" x2="23.495" y2="13.208" width="0.3048" layer="1"/>
 <wire x1="23.495" y1="13.208" x2="25.019" y2="14.732" width="0.3048" layer="1"/>
+<contactref element="D2" pad="3"/>
 </signal>
 <signal name="N$1">
 <contactref element="U1" pad="30"/>
@@ -1848,7 +1849,6 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="VSS">
 <contactref element="D1" pad="3"/>
-<contactref element="D2" pad="3"/>
 <contactref element="D3" pad="3"/>
 <contactref element="D4" pad="3"/>
 <contactref element="D5" pad="3"/>
@@ -1875,7 +1875,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="40.727559375" y1="13.42725" x2="34.05225" y2="7.082140625" width="0.3048" layer="1"/>
 <wire x1="34.05225" y1="7.082140625" x2="25.053940625" y2="6.878940625" width="0.3048" layer="1"/>
 <wire x1="25.053940625" y1="6.878940625" x2="23.585" y2="5.664" width="0.3048" layer="1"/>
-<wire x1="7.336140625" y1="18.017746875" x2="7.132940625" y2="27.016059375" width="0.3048" layer="1"/>
 <wire x1="7.132940625" y1="27.016059375" x2="5.918" y2="28.485" width="0.3048" layer="1"/>
 <wire x1="23.585" y1="5.664" x2="22.479" y2="8.255" width="0.3048" layer="1"/>
 <wire x1="17.272" y1="11.303" x2="17.018" y2="11.176" width="0.3048" layer="1"/>
