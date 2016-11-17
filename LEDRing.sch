@@ -3234,6 +3234,7 @@ IP68&lt;br&gt;
 <part name="D12" library="SparkFun-LED" deviceset="WS2812B" device=""/>
 <part name="J3" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="U$2" library="LEDRingLib" deviceset="TE_USB_A121025CT" device=""/>
+<part name="R8" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
 </parts>
 <sheets>
 <sheet>
@@ -3296,6 +3297,7 @@ Connect LED Data pin</text>
 <instance part="D12" gate="G$1" x="99.06" y="-83.82" rot="MR0"/>
 <instance part="J3" gate="G$1" x="-2.54" y="-10.16" rot="R180"/>
 <instance part="U$2" gate="G$1" x="-88.9" y="88.9"/>
+<instance part="R8" gate="G$1" x="-106.68" y="-17.78" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -3369,6 +3371,11 @@ Connect LED Data pin</text>
 <wire x1="-86.36" y1="-15.24" x2="-86.36" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-86.36" y1="-10.16" x2="-68.58" y2="-10.16" width="0.1524" layer="91"/>
 <label x="-86.36" y="-10.16" size="1.778" layer="95" rot="MR0"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="-106.68" y1="-10.16" x2="-106.68" y2="-12.7" width="0.1524" layer="91"/>
+<label x="-109.22" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -3525,7 +3532,62 @@ Connect LED Data pin</text>
 <segment>
 <pinref part="D2" gate="G$1" pin="VSS"/>
 <wire x1="-53.34" y1="-63.5" x2="-55.88" y2="-66.04" width="0.1524" layer="91"/>
-<label x="-60.96" y="-68.58" size="1.778" layer="95"/>
+<label x="-55.88" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D3" gate="G$1" pin="VSS"/>
+<wire x1="-20.32" y1="-63.5" x2="-22.86" y2="-66.04" width="0.1524" layer="91"/>
+<label x="-22.86" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D4" gate="G$1" pin="VSS"/>
+<wire x1="12.7" y1="-63.5" x2="10.16" y2="-66.04" width="0.1524" layer="91"/>
+<label x="10.16" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D5" gate="G$1" pin="VSS"/>
+<wire x1="45.72" y1="-63.5" x2="43.18" y2="-66.04" width="0.1524" layer="91"/>
+<label x="43.18" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D6" gate="G$1" pin="VSS"/>
+<wire x1="81.28" y1="-63.5" x2="78.74" y2="-66.04" width="0.1524" layer="91"/>
+<label x="78.74" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="VSS"/>
+<wire x1="-86.36" y1="-63.5" x2="-88.9" y2="-66.04" width="0.1524" layer="91"/>
+<label x="-88.9" y="-66.04" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D7" gate="G$1" pin="VSS"/>
+<wire x1="-86.36" y1="-86.36" x2="-88.9" y2="-88.9" width="0.1524" layer="91"/>
+<label x="-88.9" y="-88.9" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D8" gate="G$1" pin="VSS"/>
+<wire x1="-53.34" y1="-86.36" x2="-55.88" y2="-88.9" width="0.1524" layer="91"/>
+<label x="-55.88" y="-88.9" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D9" gate="G$1" pin="VSS"/>
+<wire x1="-20.32" y1="-86.36" x2="-22.86" y2="-88.9" width="0.1524" layer="91"/>
+<label x="-22.86" y="-88.9" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D10" gate="G$1" pin="VSS"/>
+<wire x1="12.7" y1="-86.36" x2="10.16" y2="-88.9" width="0.1524" layer="91"/>
+<label x="10.16" y="-88.9" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D11" gate="G$1" pin="VSS"/>
+<wire x1="45.72" y1="-86.36" x2="43.18" y2="-88.9" width="0.1524" layer="91"/>
+<label x="43.18" y="-88.9" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="D12" gate="G$1" pin="VSS"/>
+<wire x1="81.28" y1="-86.36" x2="78.74" y2="-88.9" width="0.1524" layer="91"/>
+<label x="78.74" y="-88.9" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -3795,6 +3857,11 @@ Connect LED Data pin</text>
 <wire x1="124.46" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91"/>
 <label x="129.54" y="60.96" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="DIN"/>
+<wire x1="-86.36" y1="-55.88" x2="-88.9" y2="-55.88" width="0.1524" layer="91"/>
+<label x="-88.9" y="-55.88" size="1.778" layer="95" rot="MR0"/>
+</segment>
 </net>
 <net name="N$15" class="0">
 <segment>
@@ -3893,6 +3960,16 @@ Connect LED Data pin</text>
 <pinref part="U2" gate="G$1" pin="STAT"/>
 <wire x1="-68.58" y1="-15.24" x2="-71.12" y2="-15.24" width="0.1524" layer="91"/>
 <label x="-78.74" y="-15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="PD3"/>
+<wire x1="111.76" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
+<label x="114.3" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="-106.68" y1="-22.86" x2="-106.68" y2="-25.4" width="0.1524" layer="91"/>
+<label x="-109.22" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
