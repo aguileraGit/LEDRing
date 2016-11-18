@@ -3239,9 +3239,7 @@ IP68&lt;br&gt;
 <sheets>
 <sheet>
 <plain>
-<text x="-99.06" y="15.24" size="1.778" layer="91">Connect LEDs to GND
-Connect Stat pin
-Connect LED Data pin</text>
+<text x="-83.82" y="25.4" size="1.778" layer="91">Battery: https://www.sparkfun.com/products/13851</text>
 </plain>
 <instances>
 <instance part="ISP1" gate="G$1" x="91.44" y="-20.32"/>
@@ -3977,10 +3975,4 @@ Connect LED Data pin</text>
 </sheets>
 </schematic>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
