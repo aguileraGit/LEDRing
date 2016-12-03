@@ -6,7 +6,7 @@ import numpy as np
 yOffset = 1.03
 xOffset = 1.02
 
-l = 0.87
+l = 0.86
 
 numOfLeds = 12
 
