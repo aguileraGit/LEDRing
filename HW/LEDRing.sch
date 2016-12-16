@@ -3239,7 +3239,9 @@ IP68&lt;br&gt;
 <sheets>
 <sheet>
 <plain>
-<text x="-83.82" y="25.4" size="1.778" layer="91">Battery: https://www.sparkfun.com/products/13851</text>
+<text x="-66.04" y="25.4" size="1.778" layer="91">Updates:
+-Tied VCCIO and 3V3OUT
+-Tied DTR to RESET</text>
 </plain>
 <instances>
 <instance part="ISP1" gate="G$1" x="91.44" y="-20.32"/>
@@ -3658,6 +3660,11 @@ IP68&lt;br&gt;
 <wire x1="111.76" y1="81.28" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
 <label x="114.3" y="81.28" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="DTR"/>
+<wire x1="5.08" y1="81.28" x2="7.62" y2="81.28" width="0.1524" layer="91"/>
+<label x="7.62" y="81.28" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$9" class="0">
 <segment>
@@ -3970,9 +3977,24 @@ IP68&lt;br&gt;
 <label x="-109.22" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$31" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="VCCIO"/>
+<wire x1="-25.4" y1="83.82" x2="-30.48" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="83.82" x2="-30.48" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="3V3OUT"/>
+<wire x1="-30.48" y1="81.28" x2="-25.4" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
