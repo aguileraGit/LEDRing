@@ -19,9 +19,9 @@
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -1776,6 +1776,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="25.4" y1="44.323" x2="23.241" y2="44.323" width="0.3048" layer="1"/>
 <wire x1="23.241" y1="44.323" x2="21.717" y2="42.799" width="0.3048" layer="1"/>
 <wire x1="21.717" y1="42.799" x2="21.717" y2="30.988" width="0.3048" layer="1"/>
+<contactref element="U$1" pad="2"/>
+<wire x1="19.285" y1="23.341" x2="17.399" y2="30.988" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$9">
 <contactref element="R4" pad="2"/>
@@ -2200,10 +2202,12 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="22.733" y1="44.958" x2="16.51" y2="38.735" width="0.3048" layer="1"/>
 <wire x1="16.51" y1="38.735" x2="16.51" y2="34.671" width="0.3048" layer="1"/>
 </signal>
-<signal name="VCCIO">
-<contactref element="U$1" pad="4"/>
-</signal>
 <signal name="N$6">
+</signal>
+<signal name="N$31">
+<contactref element="U$1" pad="4"/>
+<contactref element="U$1" pad="17"/>
+<wire x1="25.785" y1="16.029" x2="20.585" y2="23.341" width="0" layer="19" extent="16-16"/>
 </signal>
 </signals>
 </board>
