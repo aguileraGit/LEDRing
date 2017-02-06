@@ -7246,95 +7246,6 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 </deviceset>
 </devicesets>
 </library>
-<library name="LEDRingLib">
-<packages>
-<package name="TE_USB_A121025CT">
-<description>http://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/2108877-1/A121025CT-ND/5215144</description>
-<smd name="P$6" x="-1.5" y="-2.29" dx="3.98" dy="2.65" layer="1" rot="R90"/>
-<smd name="P$7" x="1.5" y="-2.29" dx="3.98" dy="2.65" layer="1" rot="R90"/>
-<smd name="P$1" x="-2.6" y="-5.75" dx="0.5" dy="0.9" layer="1" rot="R180"/>
-<smd name="P$2" x="-2" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
-<smd name="P$3" x="1.5" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
-<smd name="P$4" x="2" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
-<smd name="P$5" x="2.6" y="-5.75" dx="0.9" dy="0.5" layer="1" rot="R90"/>
-<hole x="-7" y="-1.8" drill="1.5"/>
-<hole x="7" y="-1.8" drill="1.5"/>
-<wire x1="7" y1="0.1" x2="4.485" y2="0.1" width="0.127" layer="21" style="shortdash"/>
-<wire x1="4.485" y1="0.1" x2="-4.485" y2="0.1" width="0.127" layer="21" style="shortdash"/>
-<wire x1="-4.485" y1="0.1" x2="-7" y2="0.1" width="0.127" layer="21" style="shortdash"/>
-<wire x1="3.635" y1="-1.2" x2="4.435" y2="-1.2" width="0.1" layer="20" curve="-180"/>
-<wire x1="4.435" y1="-1.2" x2="4.435" y2="-2" width="0.1" layer="20"/>
-<wire x1="4.435" y1="-2" x2="3.635" y2="-2" width="0.1" layer="20" curve="-180"/>
-<wire x1="3.635" y1="-1.2" x2="3.635" y2="-2" width="0.1" layer="20"/>
-<wire x1="-3.635" y1="-1.2" x2="-3.635" y2="-2" width="0.1" layer="20"/>
-<wire x1="-4.435" y1="-2" x2="-4.435" y2="-1.2" width="0.1" layer="20"/>
-<wire x1="-4.635" y1="-4.9" x2="-3.835" y2="-4.9" width="0.1" layer="20" curve="-180"/>
-<wire x1="-3.835" y1="-4.9" x2="-3.835" y2="-5.7" width="0.1" layer="20"/>
-<wire x1="-3.835" y1="-5.7" x2="-4.635" y2="-5.7" width="0.1" layer="20" curve="-180"/>
-<wire x1="-4.635" y1="-5.7" x2="-4.635" y2="-4.9" width="0.1" layer="20"/>
-<wire x1="4.635" y1="-4.9" x2="4.635" y2="-5.7" width="0.1" layer="20"/>
-<wire x1="4.635" y1="-5.7" x2="3.835" y2="-5.7" width="0.1" layer="20" curve="-180"/>
-<wire x1="3.835" y1="-5.7" x2="3.835" y2="-4.9" width="0.1" layer="20"/>
-<wire x1="3.835" y1="-4.9" x2="4.635" y2="-4.9" width="0.1" layer="20" curve="-180"/>
-<wire x1="4.035" y1="-1.2" x2="4.035" y2="-2" width="0.1" layer="21"/>
-<wire x1="-4.035" y1="-1.2" x2="-4.035" y2="-2" width="0.1" layer="21"/>
-<wire x1="4.235" y1="-4.9" x2="4.235" y2="-5.7" width="0.1" layer="21"/>
-<wire x1="-4.235" y1="-4.9" x2="-4.235" y2="-5.7" width="0.1" layer="21"/>
-<wire x1="-8.9" y1="-1.8" x2="8.9" y2="-1.8" width="0.1" layer="21"/>
-<wire x1="-7" y1="-3.7" x2="7" y2="-3.7" width="0.127" layer="21"/>
-<wire x1="-7" y1="0.1" x2="-4.485" y2="0.1" width="0.127" layer="21"/>
-<wire x1="-4.485" y1="0.1" x2="4.485" y2="0.1" width="0.127" layer="21"/>
-<wire x1="4.485" y1="0.1" x2="7" y2="0.1" width="0.127" layer="21"/>
-<wire x1="-7" y1="0.1" x2="-7" y2="-3.7" width="0.127" layer="21" curve="180"/>
-<wire x1="7" y1="0.1" x2="7" y2="-3.7" width="0.127" layer="21" curve="-180"/>
-<wire x1="-4.485" y1="2.3" x2="4.485" y2="2.3" width="0.127" layer="21"/>
-<wire x1="-4.485" y1="2.3" x2="-4.485" y2="0.1" width="0.127" layer="21"/>
-<wire x1="4.485" y1="2.3" x2="4.485" y2="0.1" width="0.127" layer="21"/>
-<wire x1="-4.435" y1="-1.2" x2="-3.635" y2="-1.2" width="0.1" layer="20" curve="-180"/>
-<wire x1="-3.635" y1="-2" x2="-4.435" y2="-2" width="0.1" layer="20" curve="-180"/>
-</package>
-</packages>
-<symbols>
-<symbol name="TE_USB_A121025CT">
-<description>&lt;b&gt;TE USB Micro USB&lt;/b&gt;&lt;br&gt;
-IP68&lt;br&gt;
-&lt;a href="http://www.digikey.com/en/ptm/t/te-connectivity/te-connectivity-amp/ip68-micro-usb?pn_sku=A121025CT-ND&amp;part_id=5215144&amp;video_source=Part_Detail"&gt;Digikey&lt;/a&gt;&lt;br&gt;</description>
-<pin name="VBUS" x="10.16" y="5.08" length="middle" rot="R180"/>
-<pin name="D-" x="10.16" y="2.54" length="middle" rot="R180"/>
-<pin name="D+" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="ID" x="10.16" y="-2.54" length="middle" rot="R180"/>
-<pin name="GND" x="10.16" y="-5.08" length="middle" rot="R180"/>
-<wire x1="5.08" y1="10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-10.16" x2="-5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="10.16" x2="5.08" y2="10.16" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="TE_USB_A121025CT">
-<description>&lt;b&gt;TE USB Micro USB&lt;/b&gt;&lt;br&gt;
-IP68&lt;br&gt;
-&lt;a href="http://www.digikey.com/en/ptm/t/te-connectivity/te-connectivity-amp/ip68-micro-usb?pn_sku=A121025CT-ND&amp;part_id=5215144&amp;video_source=Part_Detail"&gt;Digikey&lt;/a&gt;&lt;br&gt;</description>
-<gates>
-<gate name="G$1" symbol="TE_USB_A121025CT" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="TE_USB_A121025CT">
-<connects>
-<connect gate="G$1" pin="D+" pad="P$3"/>
-<connect gate="G$1" pin="D-" pad="P$2"/>
-<connect gate="G$1" pin="GND" pad="P$5"/>
-<connect gate="G$1" pin="ID" pad="P$4"/>
-<connect gate="G$1" pin="VBUS" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SparkFun-Retired">
 <description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
 In this library you'll find all manner of retired footprints for resistors, capacitors, board names, ICs, etc., that are no longer used in our catalog.&lt;br&gt;&lt;br&gt;
@@ -7640,6 +7551,95 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 </deviceset>
 </devicesets>
 </library>
+<library name="LEDRingLib">
+<packages>
+<package name="TE_USB_A121025CT">
+<description>http://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/2108877-1/A121025CT-ND/5215144</description>
+<smd name="P$6" x="-1.5" y="-2.29" dx="3.98" dy="2.65" layer="1" rot="R90"/>
+<smd name="P$7" x="1.5" y="-2.29" dx="3.98" dy="2.65" layer="1" rot="R90"/>
+<smd name="P$5" x="-2.6" y="-5.75" dx="0.5" dy="0.9" layer="1" rot="R180"/>
+<smd name="P$4" x="-2" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$3" x="1.5" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$2" x="2" y="-5.75" dx="0.9" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$1" x="2.6" y="-5.75" dx="0.9" dy="0.5" layer="1" rot="R90"/>
+<hole x="-7" y="-1.8" drill="1.5"/>
+<hole x="7" y="-1.8" drill="1.5"/>
+<wire x1="7" y1="0.1" x2="4.485" y2="0.1" width="0.127" layer="21" style="shortdash"/>
+<wire x1="4.485" y1="0.1" x2="-4.485" y2="0.1" width="0.127" layer="21" style="shortdash"/>
+<wire x1="-4.485" y1="0.1" x2="-7" y2="0.1" width="0.127" layer="21" style="shortdash"/>
+<wire x1="3.635" y1="-1.2" x2="4.435" y2="-1.2" width="0.1" layer="20" curve="-180"/>
+<wire x1="4.435" y1="-1.2" x2="4.435" y2="-2" width="0.1" layer="20"/>
+<wire x1="4.435" y1="-2" x2="3.635" y2="-2" width="0.1" layer="20" curve="-180"/>
+<wire x1="3.635" y1="-1.2" x2="3.635" y2="-2" width="0.1" layer="20"/>
+<wire x1="-3.635" y1="-1.2" x2="-3.635" y2="-2" width="0.1" layer="20"/>
+<wire x1="-4.435" y1="-2" x2="-4.435" y2="-1.2" width="0.1" layer="20"/>
+<wire x1="-4.635" y1="-4.9" x2="-3.835" y2="-4.9" width="0.1" layer="20" curve="-180"/>
+<wire x1="-3.835" y1="-4.9" x2="-3.835" y2="-5.7" width="0.1" layer="20"/>
+<wire x1="-3.835" y1="-5.7" x2="-4.635" y2="-5.7" width="0.1" layer="20" curve="-180"/>
+<wire x1="-4.635" y1="-5.7" x2="-4.635" y2="-4.9" width="0.1" layer="20"/>
+<wire x1="4.635" y1="-4.9" x2="4.635" y2="-5.7" width="0.1" layer="20"/>
+<wire x1="4.635" y1="-5.7" x2="3.835" y2="-5.7" width="0.1" layer="20" curve="-180"/>
+<wire x1="3.835" y1="-5.7" x2="3.835" y2="-4.9" width="0.1" layer="20"/>
+<wire x1="3.835" y1="-4.9" x2="4.635" y2="-4.9" width="0.1" layer="20" curve="-180"/>
+<wire x1="4.035" y1="-1.2" x2="4.035" y2="-2" width="0.1" layer="21"/>
+<wire x1="-4.035" y1="-1.2" x2="-4.035" y2="-2" width="0.1" layer="21"/>
+<wire x1="4.235" y1="-4.9" x2="4.235" y2="-5.7" width="0.1" layer="21"/>
+<wire x1="-4.235" y1="-4.9" x2="-4.235" y2="-5.7" width="0.1" layer="21"/>
+<wire x1="-8.9" y1="-1.8" x2="8.9" y2="-1.8" width="0.1" layer="21"/>
+<wire x1="-7" y1="-3.7" x2="7" y2="-3.7" width="0.127" layer="21"/>
+<wire x1="-7" y1="0.1" x2="-4.485" y2="0.1" width="0.127" layer="21"/>
+<wire x1="-4.485" y1="0.1" x2="4.485" y2="0.1" width="0.127" layer="21"/>
+<wire x1="4.485" y1="0.1" x2="7" y2="0.1" width="0.127" layer="21"/>
+<wire x1="-7" y1="0.1" x2="-7" y2="-3.7" width="0.127" layer="21" curve="180"/>
+<wire x1="7" y1="0.1" x2="7" y2="-3.7" width="0.127" layer="21" curve="-180"/>
+<wire x1="-4.485" y1="2.3" x2="4.485" y2="2.3" width="0.127" layer="21"/>
+<wire x1="-4.485" y1="2.3" x2="-4.485" y2="0.1" width="0.127" layer="21"/>
+<wire x1="4.485" y1="2.3" x2="4.485" y2="0.1" width="0.127" layer="21"/>
+<wire x1="-4.435" y1="-1.2" x2="-3.635" y2="-1.2" width="0.1" layer="20" curve="-180"/>
+<wire x1="-3.635" y1="-2" x2="-4.435" y2="-2" width="0.1" layer="20" curve="-180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="TE_USB_A121025CT">
+<description>&lt;b&gt;TE USB Micro USB&lt;/b&gt;&lt;br&gt;
+IP68&lt;br&gt;
+&lt;a href="http://www.digikey.com/en/ptm/t/te-connectivity/te-connectivity-amp/ip68-micro-usb?pn_sku=A121025CT-ND&amp;part_id=5215144&amp;video_source=Part_Detail"&gt;Digikey&lt;/a&gt;&lt;br&gt;</description>
+<pin name="VBUS" x="10.16" y="5.08" length="middle" rot="R180"/>
+<pin name="D-" x="10.16" y="2.54" length="middle" rot="R180"/>
+<pin name="D+" x="10.16" y="0" length="middle" rot="R180"/>
+<pin name="ID" x="10.16" y="-2.54" length="middle" rot="R180"/>
+<pin name="GND" x="10.16" y="-5.08" length="middle" rot="R180"/>
+<wire x1="5.08" y1="10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-10.16" x2="-5.08" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="10.16" x2="5.08" y2="10.16" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TE_USB_A121025CT">
+<description>&lt;b&gt;TE USB Micro USB&lt;/b&gt;&lt;br&gt;
+IP68&lt;br&gt;
+&lt;a href="http://www.digikey.com/en/ptm/t/te-connectivity/te-connectivity-amp/ip68-micro-usb?pn_sku=A121025CT-ND&amp;part_id=5215144&amp;video_source=Part_Detail"&gt;Digikey&lt;/a&gt;&lt;br&gt;</description>
+<gates>
+<gate name="G$1" symbol="TE_USB_A121025CT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TE_USB_A121025CT">
+<connects>
+<connect gate="G$1" pin="D+" pad="P$3"/>
+<connect gate="G$1" pin="D-" pad="P$2"/>
+<connect gate="G$1" pin="GND" pad="P$5"/>
+<connect gate="G$1" pin="ID" pad="P$4"/>
+<connect gate="G$1" pin="VBUS" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7700,7 +7700,6 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <part name="D11" library="SparkFun-LED" deviceset="WS2812B" device=""/>
 <part name="D12" library="SparkFun-LED" deviceset="WS2812B" device=""/>
 <part name="J3" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
-<part name="U$2" library="LEDRingLib" deviceset="TE_USB_A121025CT" device=""/>
 <part name="R8" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
 <part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP"/>
 <part name="D13" library="SparkFun-LED" deviceset="LED" device="0603"/>
@@ -7713,6 +7712,9 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="0"/>
 <part name="GND20" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP4" library="SparkFun-Retired" deviceset="JUMPER-3" device="SMD"/>
+<part name="U$1" library="LEDRingLib" deviceset="TE_USB_A121025CT" device=""/>
+<part name="R11" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
+<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -7770,7 +7772,6 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <instance part="D11" gate="G$1" x="63.5" y="-83.82" rot="MR0"/>
 <instance part="D12" gate="G$1" x="99.06" y="-83.82" rot="MR0"/>
 <instance part="J3" gate="G$1" x="-2.54" y="-10.16" rot="R180"/>
-<instance part="U$2" gate="G$1" x="-96.52" y="104.14"/>
 <instance part="R8" gate="G$1" x="-106.68" y="-17.78" rot="R90"/>
 <instance part="C8" gate="G$1" x="-10.16" y="22.86"/>
 <instance part="D13" gate="G$1" x="38.1" y="50.8"/>
@@ -7783,6 +7784,9 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <instance part="R10" gate="G$1" x="-78.74" y="109.22"/>
 <instance part="GND20" gate="1" x="-27.94" y="63.5"/>
 <instance part="JP4" gate="G$1" x="-12.7" y="35.56"/>
+<instance part="U$1" gate="G$1" x="-99.06" y="104.14"/>
+<instance part="R11" gate="G$1" x="132.08" y="20.32" rot="R90"/>
+<instance part="R12" gate="G$1" x="142.24" y="20.32" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -7808,11 +7812,6 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <label x="144.78" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U4" gate="G$1" pin="INT2"/>
-<wire x1="104.14" y1="12.7" x2="106.68" y2="12.7" width="0.1524" layer="91"/>
-<label x="106.68" y="12.7" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U5" gate="U$1" pin="TXD"/>
 <wire x1="0" y1="109.22" x2="2.54" y2="109.22" width="0.1524" layer="91"/>
 <label x="2.54" y="109.22" size="1.778" layer="95"/>
@@ -7823,11 +7822,6 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="73.66" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
 <label x="144.78" y="73.66" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U4" gate="G$1" pin="INT1"/>
-<wire x1="104.14" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
-<label x="106.68" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U5" gate="U$1" pin="RXD"/>
@@ -7867,8 +7861,8 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-81.28" y1="99.06" x2="-81.28" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="GND"/>
-<wire x1="-86.36" y1="99.06" x2="-81.28" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="99.06" x2="-81.28" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
@@ -8271,6 +8265,14 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <wire x1="106.68" y1="-17.78" x2="109.22" y2="-17.78" width="0.1524" layer="91"/>
 <label x="109.22" y="-17.78" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="25.4" x2="132.08" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="30.48" x2="142.24" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="30.48" x2="142.24" y2="25.4" width="0.1524" layer="91"/>
+<label x="134.62" y="30.48" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -8427,14 +8429,14 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 <label x="-78.74" y="-15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U1" gate="A" pin="PD3"/>
-<wire x1="111.76" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
-<label x="114.3" y="68.58" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="-106.68" y1="-22.86" x2="-106.68" y2="-25.4" width="0.1524" layer="91"/>
 <label x="-109.22" y="-27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="PD4"/>
+<wire x1="111.76" y1="66.04" x2="114.3" y2="66.04" width="0.1524" layer="91"/>
+<label x="114.3" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$33" class="0">
@@ -8454,9 +8456,9 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 </net>
 <net name="D_N_OUT" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="D-"/>
-<wire x1="-86.36" y1="106.68" x2="-83.82" y2="106.68" width="0.1524" layer="91"/>
-<label x="-83.82" y="106.68" size="1.778" layer="95"/>
+<label x="-86.36" y="106.68" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="D-"/>
+<wire x1="-86.36" y1="106.68" x2="-88.9" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
@@ -8466,9 +8468,9 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 </net>
 <net name="D_P_OUT" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="D+"/>
-<wire x1="-86.36" y1="104.14" x2="-83.82" y2="104.14" width="0.1524" layer="91"/>
-<label x="-83.82" y="104.14" size="1.778" layer="95"/>
+<label x="-86.36" y="104.14" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="D+"/>
+<wire x1="-86.36" y1="104.14" x2="-88.9" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP2" gate="G$1" pin="2"/>
@@ -8558,9 +8560,43 @@ This USB2.0 Full Speed  IC offers a compact bridge to full handshake UART interf
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="VBUS"/>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="109.22" x2="-83.82" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VBUS"/>
+<wire x1="-83.82" y1="109.22" x2="-88.9" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="INT2" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="INT2"/>
+<wire x1="104.14" y1="12.7" x2="106.68" y2="12.7" width="0.1524" layer="91"/>
+<label x="106.68" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="142.24" y1="15.24" x2="142.24" y2="12.7" width="0.1524" layer="91"/>
+<label x="139.7" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="PD3"/>
+<wire x1="111.76" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
+<label x="114.3" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="INT1" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="INT1"/>
+<wire x1="104.14" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
+<label x="106.68" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="15.24" x2="132.08" y2="12.7" width="0.1524" layer="91"/>
+<label x="129.54" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="PD2"/>
+<wire x1="111.76" y1="71.12" x2="114.3" y2="71.12" width="0.1524" layer="91"/>
+<label x="114.3" y="71.12" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
