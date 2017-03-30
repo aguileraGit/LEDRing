@@ -142,10 +142,10 @@
 </layers>
 <board>
 <plain>
-<text x="30.988" y="1.651" size="1.778" layer="26" rot="MR0">v1.1</text>
+<text x="30.988" y="1.651" size="1.778" layer="26" rot="MR0">v1.2</text>
 <text x="19.05" y="19.431" size="2.54" layer="21">LED Ring</text>
 <text x="21.082" y="15.621" size="1.27" layer="21">Diego Aguilera
-15 Jan 2017</text>
+1 Apr 2017</text>
 <wire x1="7.37" y1="8.93" x2="20.73" y2="1.21" width="0.254" layer="20"/>
 <text x="23.7" y="6.6" size="1.016" layer="26" rot="MR45">USB_P</text>
 <text x="14.45" y="12.9" size="1.016" layer="26" rot="MR0">USB_M</text>
