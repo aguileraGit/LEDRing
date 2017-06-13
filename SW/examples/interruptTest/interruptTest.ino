@@ -70,17 +70,17 @@ void setup() {
   //Neopixels
   strip.begin();
   strip.show();
-  
+
   //App specific
   interrupt = false;
   sleepEnabled = true;
   ledBlink = false;
   activity = false;
   activityCount = 0;
-  
+
   //Init LEDs
   pixelValues[0] = 128;
-  for(int i = 1; i < PIXEL_COUNT; i++){
+  for (int i = 1; i < PIXEL_COUNT; i++) {
     pixelValues[i] = 0;
   }
   updateAllCount = 0;
@@ -105,48 +105,40 @@ void loop() {
   } //End interrupt
 
 
-  if(updateBlinkLed){
+  if (updateBlinkLed) {
     updateBlinkLed = false;
+    ledBlink = !ledBlink;
     
-    if(ledBlink){
-      for(int i = 1; i < PIXEL_COUNT; i++){
-        if(i == currentPixel){
-          strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
-        } else if(i == 6) {
+    for (int i = 1; i < PIXEL_COUNT; i++) {
+      if (i == currentPixel) {
+        strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
+      } else if (i == 6) {
+        if(ledBlink){
           strip.setPixelColor(6, strip.Color(32, 0, 0));
         } else {
-          strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
-        }
-      }
-      
-      
-  
-    } else {
-      for(int i = 1; i < PIXEL_COUNT; i++){
-        if(i == currentPixel){
-          strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
-        } else if(i == 6) {
           strip.setPixelColor(6, strip.Color(0, 0, 0));
-        } else {
-          strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
         }
+      } else {
+        strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
       }
     }
+
     strip.show();
-    
+
     updateAllCount++;
-    
-    if(updateAllCount == 4){
+
+    if (updateAllCount == 4) {
       updateAllCount = 0;
-      
+
       currentPixel++;
-      
-      if(currentPixel >= PIXEL_COUNT){
+
+      if (currentPixel >= PIXEL_COUNT) {
         currentPixel = 0;
       }
+
     }
   }
-  
+
 
   //Sleep - power savings
   if (sleepEnabled) {
@@ -173,14 +165,12 @@ void oneMsTimer() {
   if (timerCount % 100 == 0) {
     ;
   }
-  
+
   //Update every 50ms
   if (timerCount % 200 == 0) {
     updateBlinkLed = true;
-    ledBlink = !ledBlink;
-    updateAllCount++;
   }
-  
+
   //-------- Track no activity --------//
   if (activity == false) {
     activityCount++;
