@@ -13,29 +13,31 @@
 #define PIXEL_PIN  6
 #define PIXEL_COUNT 12
 
-int ledNum;
-unsigned char pixelValuesR[PIXEL_COUNT];
-unsigned char pixelValuesG[PIXEL_COUNT];
-unsigned char pixelValuesB[PIXEL_COUNT];
-
-int randLed;
-bool ledBlink;
-int currentLed;
-
+//System
 MMA8452 accelerometer;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB);
-
 bool interrupt;
+unsigned long timerCount;
+#define SHUTDOWN  5000  //Shutdown - 1000ms = 1s
+
+
+//App specific Led
+volatile bool updateBlinkLed;
+volatile bool ledBlink;
+volatile bool updateAllLeds;
+volatile int updateAllCount;
+volatile int currentPixel;
+
+
+int ledNum;
+unsigned char pixelValues[PIXEL_COUNT];
+
 
 //Sleep
 bool sleepEnabled;
+bool activity;
+unsigned long activityCount;
 
-//Shutdown - 1000ms = 1s
-#define SHUTDOWN  5000
-
-unsigned long timerCount;
-
-int shutDownCount;
 
 void setup() {
   //Enable Debug LED
@@ -47,7 +49,6 @@ void setup() {
   bool initialized = accelerometer.init();
 
   if (initialized) {
-
     accelerometer.setDataRate(MMA_400hz);
     accelerometer.setRange(MMA_RANGE_2G);
 
@@ -60,34 +61,30 @@ void setup() {
     accelerometer.setInterruptPins(false, false, false, true, false, false);
 
     attachInterrupt(0, accelerometerInterruptHandler, FALLING);
-
-  } else {
-    digitalWrite(DEBUG_LED, HIGH);
-    while (true) {};
   }
 
   //Timer
-  shutDownCount = 0;
   Timer1.initialize(1000); //1000ns = 1ms
   Timer1.attachInterrupt(oneMsTimer);
 
   //Neopixels
   strip.begin();
   strip.show();
-  int i = 0;
-  for (i = 0; i < PIXEL_COUNT; i++) {
-    pixelValuesR[i] = 0;
-    pixelValuesG[i] = 0;
-    pixelValuesB[i] = 0;
-  }
-
+  
+  //App specific
   interrupt = false;
   sleepEnabled = true;
-
-  ledNum = 0;
-  randLed = random(PIXEL_COUNT);
   ledBlink = false;
-  currentLed = 0;
+  activity = false;
+  activityCount = 0;
+  
+  //Init LEDs
+  pixelValues[0] = 128;
+  for(int i = 1; i < PIXEL_COUNT; i++){
+    pixelValues[i] = 0;
+  }
+  updateAllCount = 0;
+  currentPixel = 0;
 }
 
 void loop() {
@@ -103,13 +100,55 @@ void loop() {
     accelerometer.getTapDetails(&singleTap, &doubleTap, &x, &y, &z, &negX, &negY, &negZ);
 
     //Debug - LED
-    delay(100);
-    digitalWrite(DEBUG_LED, HIGH);
-
-
+    //delay(100);
+    //digitalWrite(DEBUG_LED, HIGH);
   } //End interrupt
 
-  //Sleep
+
+  if(updateBlinkLed){
+    updateBlinkLed = false;
+    
+    if(ledBlink){
+      for(int i = 1; i < PIXEL_COUNT; i++){
+        if(i == currentPixel){
+          strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
+        } else if(i == 6) {
+          strip.setPixelColor(6, strip.Color(32, 0, 0));
+        } else {
+          strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
+        }
+      }
+      
+      
+  
+    } else {
+      for(int i = 1; i < PIXEL_COUNT; i++){
+        if(i == currentPixel){
+          strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
+        } else if(i == 6) {
+          strip.setPixelColor(6, strip.Color(0, 0, 0));
+        } else {
+          strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
+        }
+      }
+    }
+    strip.show();
+    
+    updateAllCount++;
+    
+    if(updateAllCount == 4){
+      updateAllCount = 0;
+      
+      currentPixel++;
+      
+      if(currentPixel >= PIXEL_COUNT){
+        currentPixel = 0;
+      }
+    }
+  }
+  
+
+  //Sleep - power savings
   if (sleepEnabled) {
     sleepFn();
   }
@@ -120,28 +159,39 @@ void loop() {
 
 
 void accelerometerInterruptHandler() {
-  digitalWrite(DEBUG_LED, HIGH);
+  //digitalWrite(DEBUG_LED, HIGH);
   interrupt = true;
+  activity = true;
 }
 
 
 void oneMsTimer() {
+  //Update every 1ms
   timerCount++;
-  
-  //Update LEDs every 10ms. 
-  if (timerCount % 10 == 0) {
-    currentLed++;
-    
-    ledBlink = !ledBlink;
 
-    if(ledBlink){
-      strip.setPixelColor(randLed, strip.Color(64, 0, 0));  
-    }
-    
+  //Update every 100ms
+  if (timerCount % 100 == 0) {
+    ;
+  }
+  
+  //Update every 50ms
+  if (timerCount % 200 == 0) {
+    updateBlinkLed = true;
+    ledBlink = !ledBlink;
+    updateAllCount++;
+  }
+  
+  //-------- Track no activity --------//
+  if (activity == false) {
+    activityCount++;
+  } else {
+    activityCount = 0;
+    activity = false;
   }
 
-  //-------- Shut down Device --------//
-  if (timerCount % SHUTDOWN == 0) {
+  //-------- Shut Down --------//
+  if (activityCount == SHUTDOWN) {
+    activityCount = 0;
 
     //Turn off LED
     digitalWrite(DEBUG_LED, LOW);
