@@ -16,10 +16,10 @@
 //System
 MMA8452 accelerometer;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB);
-bool interrupt;
+volatile bool interrupt;
 unsigned long timerCount;
 #define SHUTDOWN  5000  //Shutdown - 1000ms = 1s
-
+volatile bool shutDown;
 
 //App specific Led
 volatile bool updateBlinkLed;
@@ -28,10 +28,9 @@ volatile bool updateAllLeds;
 volatile int updateAllCount;
 volatile int currentPixel;
 
-
-int ledNum;
-unsigned char pixelValues[PIXEL_COUNT];
-
+volatile int ledNumAtTap;
+volatile int ledNum;
+volatile int randLed;
 
 //Sleep
 bool sleepEnabled;
@@ -40,6 +39,7 @@ unsigned long activityCount;
 
 
 void setup() {
+  
   //Enable Debug LED
   pinMode(DEBUG_LED, OUTPUT);
 
@@ -77,20 +77,24 @@ void setup() {
   ledBlink = false;
   activity = false;
   activityCount = 0;
+  shutDown = false;
 
-  //Init LEDs
-  pixelValues[0] = 128;
-  for (int i = 1; i < PIXEL_COUNT; i++) {
-    pixelValues[i] = 0;
-  }
   updateAllCount = 0;
   currentPixel = 0;
+
+  randomSeed(analogRead(0));
+  randLed = random(PIXEL_COUNT);
 }
 
 void loop() {
-
+  
+  /********************************************************/
+  // Deal with taps
+  /********************************************************/
   if (interrupt) {
     interrupt = false;
+
+    Timer1.stop();
 
     bool singleTap, doubleTap;
     bool x, y, z;
@@ -99,35 +103,63 @@ void loop() {
     //Clear it by reading from it. Duh!
     accelerometer.getTapDetails(&singleTap, &doubleTap, &x, &y, &z, &negX, &negY, &negZ);
 
-    //Debug - LED
-    //delay(100);
-    //digitalWrite(DEBUG_LED, HIGH);
-  } //End interrupt
-
-
-  if (updateBlinkLed) {
-    updateBlinkLed = false;
-    ledBlink = !ledBlink;
-    
-    for (int i = 1; i < PIXEL_COUNT; i++) {
-      if (i == currentPixel) {
-        strip.setPixelColor(currentPixel, strip.Color(8, 8, 8));
-      } else if (i == 6) {
-        if(ledBlink){
-          strip.setPixelColor(6, strip.Color(32, 0, 0));
-        } else {
-          strip.setPixelColor(6, strip.Color(0, 0, 0));
-        }
-      } else {
-        strip.setPixelColor(pixelValues[i], strip.Color(0, 0, 0));
+    if (singleTap) {
+      //Clear all
+      for (int j = 0; j < PIXEL_COUNT; j++) {
+        strip.setPixelColor(j, strip.Color(0, 0, 0));
+        strip.show();
       }
+
+      if (ledNumAtTap == randLed) {
+        strip.setPixelColor(ledNumAtTap, strip.Color(0, 32, 0));
+        strip.show();
+      } else {
+        strip.setPixelColor(ledNumAtTap, strip.Color(32, 0, 0));
+        strip.show();
+      }
+
+      delay(800);
     }
 
-    strip.show();
+    //Get new random LED
+    randLed = random(PIXEL_COUNT);
 
+    //Resume interrupt and timer operations
+    Timer1.resume();
+
+  } //End interrupt
+
+  /********************************************************/
+  // Set LEDs
+  /********************************************************/
+  if (updateBlinkLed) {
+    Timer1.stop();
+    ledBlink = !ledBlink;
+
+    //Clear all
+    for (int j = 0; j < PIXEL_COUNT; j++) {
+      strip.setPixelColor(j, strip.Color(0, 0, 0));
+      strip.show();
+    }
+
+    for (int i = 0; i < PIXEL_COUNT; i++) {
+      if (i == currentPixel) {
+        strip.setPixelColor(currentPixel, strip.Color(16, 16, 16));
+      } else if (i == randLed) {
+        if (ledBlink) {
+          strip.setPixelColor(randLed, strip.Color(0, 0, 32));
+        } else {
+          strip.setPixelColor(randLed, strip.Color(0, 0, 0));
+        }
+      } else {
+        strip.setPixelColor(i, strip.Color(0, 0, 0));
+      }
+      strip.show();
+    }
+
+    //Blinking on the target LED is faster than the other LEDs - Control the rate of all the LEDs here.
     updateAllCount++;
-
-    if (updateAllCount == 4) {
+    if (updateAllCount >= 2) {
       updateAllCount = 0;
 
       currentPixel++;
@@ -137,12 +169,38 @@ void loop() {
       }
 
     }
+
+    updateBlinkLed = false;
+    Timer1.resume();
   }
 
 
-  //Sleep - power savings
+  /********************************************************/
+  // Sleep for a few milliseconds
+  /********************************************************/
   if (sleepEnabled) {
     sleepFn();
+  }
+
+  /********************************************************/
+  // Shut device down until a tap occurrs
+  /********************************************************/
+  if (shutDown) {
+
+    digitalWrite(DEBUG_LED, LOW);
+
+    for (int j = 0; j < PIXEL_COUNT; j++) {
+      strip.setPixelColor(j, strip.Color(0, 0, 0));
+      strip.show();
+    }
+    
+    //Wait for tap
+    while (!activity) {
+      sleepFn();
+    }
+
+    activityCount = 0;
+    shutDown = false;
   }
 
 }
@@ -151,47 +209,45 @@ void loop() {
 
 
 void accelerometerInterruptHandler() {
-  //digitalWrite(DEBUG_LED, HIGH);
   interrupt = true;
   activity = true;
+  ledNumAtTap = currentPixel;
 }
 
 
+
 void oneMsTimer() {
-  //Update every 1ms
+  /********************************************************/
+  // Update every 1ms
+  /********************************************************/
   timerCount++;
 
-  //Update every 100ms
-  if (timerCount % 100 == 0) {
-    ;
-  }
-
-  //Update every 50ms
-  if (timerCount % 200 == 0) {
+  /********************************************************/
+  // Update every 50ms
+  /********************************************************/
+  if (timerCount % 20 == 0) {
     updateBlinkLed = true;
   }
 
-  //-------- Track no activity --------//
-  if (activity == false) {
+  /********************************************************/
+  // Track activity
+  /********************************************************/
+  if (!activity) {
     activityCount++;
   } else {
     activityCount = 0;
     activity = false;
   }
 
-  //-------- Shut Down --------//
+  /********************************************************/
+  // Shut down
+  /********************************************************/
   if (activityCount == SHUTDOWN) {
-    activityCount = 0;
-
-    //Turn off LED
-    digitalWrite(DEBUG_LED, LOW);
-
-    //Call sleep function.
-    sleepFn();
+    shutDown = true;
   }
 }
 
 
 void sleepFn() {
-  LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_ON, TIMER0_OFF, SPI_OFF, USART0_ON, TWI_OFF);
+  LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_ON, TIMER0_OFF, SPI_OFF, USART0_ON, TWI_ON);
 }
