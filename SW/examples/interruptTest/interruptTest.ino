@@ -18,7 +18,7 @@ MMA8452 accelerometer;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB);
 volatile bool interrupt;
 unsigned long timerCount;
-#define SHUTDOWN  5000  //Shutdown - 1000ms = 1s
+#define SHUTDOWN  30000  //Shutdown - 1000ms = 1s
 volatile bool shutDown;
 
 //App specific Led
@@ -31,6 +31,10 @@ volatile int currentPixel;
 volatile int ledNumAtTap;
 volatile int ledNum;
 volatile int randLed;
+
+#define GAME_SPEED_SLOW  80 
+#define GAME_SPEED_FAST  20
+#define GAME_SPEED       GAME_SPEED_SLOW
 
 //Sleep
 bool sleepEnabled;
@@ -225,7 +229,7 @@ void oneMsTimer() {
   /********************************************************/
   // Update every 50ms
   /********************************************************/
-  if (timerCount % 20 == 0) {
+  if (timerCount % GAME_SPEED == 0) {
     updateBlinkLed = true;
   }
 
